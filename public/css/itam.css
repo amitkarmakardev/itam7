@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+#index{
+    font-size: 0.9em;
+}
+.autocomplete-suggestions {
+    font-family: Consolas, monospace;
+    border: 1px solid #dedede;
+    background: #FFF;
+    overflow: auto;
+}
+
+.autocomplete-suggestion {
+    cursor: default;
+    padding: 6px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.autocomplete-selected {
+    background: #9f9de6;
+}
+
+.autocomplete-suggestions strong {
+    font-weight: normal;
+    color: #d90bff;
+}
+
+.autocomplete-group {
+    padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+.up{
+    color: green;
+}
+.down{
+    color: red;
+}
+.tag{
+    background-color: green;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin-left: 5px;
+    padding: 3px;
+}
+.new{
+    color: #f02122;
+}
+a{
+    color: #2e4588;
+}
+
+.ready{
+    background-color: orange;
+}
+.deployed{
+    background-color: green;
+}
+.broken{
+    background-color: red;
+}
+.out{
+    background: grey;
+}
+.scrapped{
+    background-color: black;
+}
