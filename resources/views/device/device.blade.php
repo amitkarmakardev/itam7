@@ -10,9 +10,10 @@
     <section class="content">
         <div class="box box-primary">
             <div class="box-body">
-                <table class="table table-striped index-table">
+                <table class="table table-striped" id="index">
                     <thead>
                     <tr>
+                        <th>&nbsp;</th>
                         <th>Asset ID</th>
                         <th>Model</th>
                         <th>Serial No</th>
@@ -27,12 +28,16 @@
                     <tbody>
                     @foreach($devices as $device)
                         <tr>
-                            <td><a class="label {{ strtolower($device->status) }}"
-                                    href="{{ url('device', ['view',  $device->asset_id]) }}"
-                                    target="_blank">{{ $device->asset_id ? $device->asset_id : 'NA' }}</a></td>
+                            <td>
+                            <span class="label {{ strtolower($device->status) }}">{{ strtoupper($device->status[0]) }}</span>
+                            </td>
+                            <td><a class="font-weight-bold"
+                                   href="{{ url('device', ['view',  $device->asset_id]) }}"
+                                   target="_blank">{{ $device->asset_id }}</a>
+                            </td>
                             <td>{{ $device->model }}</td>
                             <td>{{ $device->serial_no }}</td>
-                            <td style="font-weight: 600">{{ $device->ip }}</td>
+                            <td>{{ $device->ip }}</td>
                             <td>{{ $device->location }}</td>
                             <td>{{ $device->phone_no }}</td>
                             <td>{{ $device->owner }}</td>
@@ -58,7 +63,7 @@
 @section('js-code')
     <script>
         $(document).ready(function () {
-            $('.index-table').DataTable(
+            $('#index').DataTable(
                 {
                     stateSave:true,
                     sorting: [[1, 'asc']],
@@ -85,4 +90,6 @@
             }
 
             setInterval(checkIPStatus, 10000);
- 
+        });
+    </script>
+@stop

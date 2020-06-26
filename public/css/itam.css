@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-#index{
-    font-size: 0.9em;
+.index-table{
+    font-size: 0.95em;
 }
 .autocomplete-suggestions {
     font-family: Consolas, monospace;
