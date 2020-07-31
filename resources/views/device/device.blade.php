@@ -89,7 +89,7 @@
                 });
             }
 
-            setInterval(checkIPStatus, 10000);
+            setInterval(checkIPStatus, 3000);
         });
     </script>
 @stop
