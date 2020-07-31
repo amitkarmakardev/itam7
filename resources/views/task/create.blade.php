@@ -12,7 +12,7 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             {!! Form::label('asset_id', 'Asset ID') !!}
-                            {!! Form::select('asset_id', $asset_ids, null,['class' => 'assets']) !!}
+                            {!! Form::select('asset_id', ['' => ''] + $asset_ids, null,['class' => 'assets']) !!}
                         </div>
                     </div>
                     <div class="col-md-8">
