@@ -25,7 +25,7 @@ class TaskController extends Controller
 
     public function create()
     {
-        $asset_ids = Device::where('asset_id', '<>', null)->pluck('asset_id', 'asset_id');
+        $asset_ids = Device::where('asset_id', '<>', null)->pluck('asset_id', 'asset_id')->toArray();
         return view('task.create', compact('asset_ids'));
     }
 
