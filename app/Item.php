@@ -16,7 +16,9 @@ class Item extends Model
     public function getStatusAttribute()
     {
         if($this->stock < $this->buffer_stock){
-            return "Low Stock";
+            return "Low";
+        }else{
+            return "Good";
         }
     }
 }
