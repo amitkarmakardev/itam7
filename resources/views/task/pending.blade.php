@@ -48,7 +48,7 @@
                         <td class="text-center">
                             @if($task->completed_at == null)
                             <a href="{{ url('task', ['complete', $task->id])}}" onclick="return confirm('Are you sure?')">
-                                <i class="fa fa-check-circle-o" style="font-size: 1.2em; color: green"></i>
+                                <i class="fas fa-check-circle" style="font-size: 1.2em; color: green"></i>
                             </a>
                             @else
                             {{ $task->completed_at->format('d/m/Y') }}
@@ -97,7 +97,7 @@
                         <td class="text-center">
                             @if($task->completed_at == null)
                             <a href="{{ url('task', ['complete', $task->id])}}" onclick="return confirm('Are you sure?')">
-                                <i class="fa fa-check-circle-o" style="font-size: 1.2em; color: green"></i>
+                                <i class="fas fa-check-circle" style="font-size: 1.2em; color: green"></i>
                             </a>
                             @else
                             {{ $task->completed_at->format('d/m/Y') }}
