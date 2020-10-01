@@ -17,7 +17,8 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th style="width: 50%">Task</th>
+                        <th style="width: 3%">Sl</th>
+                        <th style="width: 47%">Task</th>
                         <th style="width: 15%">Asset ID</th>
                         <th style="width: 10%">Created</th>
                         <th style="width: 10%">Updated</th>
@@ -27,6 +28,7 @@
                 <tbody>
                     @foreach($today as $task)
                     <tr>
+                        <td>{{ $loop->iteration }}</td>
                         <td>
                             <a href="{{ url('task', ['view', $task->id]) }}" @if($task->isNew()) class="new" @endif>
                                 {{ $task->description }}
@@ -63,7 +65,7 @@
     </div>
     <div class="box box-primary">
         <div class="box-body">
-            <h4>Old</h4>
+            <h4>Previous Tasks</h4>
             <table class="table table-striped" id="index">
                 <thead>
                     <tr>
