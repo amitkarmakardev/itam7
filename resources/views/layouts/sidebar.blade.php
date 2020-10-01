@@ -53,10 +53,10 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('item') }}"><i class="fas fa-bars"></i> &nbsp;&nbsp;Overview</a></li>
                     @foreach($service->getItems() as $item)
-                        <li><a href="{{ url('item', $item->id) }}"><i class="{{ $item->icon }}"></i> &nbsp;&nbsp;{{ $item->name }}</a></li>
+                        <li><a href="{{ url('item', ['view', $item->id]) }}"><i class="{{ $item->icon_class }}"></i> &nbsp;&nbsp;{{ $item->name }}</a></li>
                     @endforeach
 
-                    <li><a href="{{ url('item', ['consumption']) }}"><i class="fas fa-paste"></i> &nbsp;&nbsp;Consumption</a></li>
+                    <!-- <li><a href="{{ url('item', ['consumption']) }}"><i class="fas fa-paste"></i> &nbsp;&nbsp;Consumption</a></li> -->
                 </ul>
             </li>
             <li class="treeview

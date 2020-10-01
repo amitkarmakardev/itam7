@@ -8,6 +8,11 @@ class Item extends Model
 {
     protected $fillable=['name', 'location', 'buffer_stock'];
 
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
     public function consumptions()
     {
         return $this->hasMany('App\ItemConsumption');
