@@ -11,5 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TaskProgress extends Model
 {
+    protected $table="task_progresses";
     protected $fillable = ['task_id','description'];
 }
