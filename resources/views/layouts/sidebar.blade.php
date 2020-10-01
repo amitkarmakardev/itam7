@@ -33,7 +33,7 @@
                     @foreach($config->getValue('device', 'asc') as $device)
                     <li>
                         <a href="{{ url('device', [$device]) }}">
-                            <i class="fa fa-circle-o"></i> <span>{{ ucwords(str_replace_last('-', ' ', $device)) }}</span>
+                            <i class="{{ $config->getValue($device.'_icon')->first() }}"></i> &nbsp;&nbsp;<span>{{ ucwords(str_replace_last('-', ' ', $device)) }}</span>
                         </a>
                     </li>
                     @endforeach
