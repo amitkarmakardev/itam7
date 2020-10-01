@@ -3,7 +3,7 @@
 
 @section('subcontent')
 <section class="content-header">
-    <h1>Items <a href="{{ url('item', ['create']) }}">(+)</a></h1>
+    <h1>Consumables Overview <a href="{{ url('item', ['create']) }}">(+)</a></h1>
 </section>
 <section class="content">
     <div class="box box-primary">

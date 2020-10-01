@@ -51,7 +51,11 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('item') }}"><i class="fas fa-bars"></i> &nbsp;&nbsp;Items</a></li>
+                    <li><a href="{{ url('item') }}"><i class="fas fa-bars"></i> &nbsp;&nbsp;Overview</a></li>
+                    @foreach($service->getItems() as $item)
+                        <li><a href="{{ url('item', $item->id) }}"><i class="{{ $item->icon }}"></i> &nbsp;&nbsp;{{ $item->name }}</a></li>
+                    @endforeach
+
                     <li><a href="{{ url('item', ['consumption']) }}"><i class="fas fa-paste"></i> &nbsp;&nbsp;Consumption</a></li>
                 </ul>
             </li>
@@ -67,13 +71,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('config', ['device']) }}"><i class="fa fa-circle-o"></i> Device</a></li>
-                    <li><a href="{{ url('config', ['department']) }}"><i class="fa fa-circle-o"></i> Department</a>
+                    <li><a href="{{ url('config', ['device']) }}"><i class="fas fa-bars"></i>&nbsp;&nbsp; Device</a></li>
+                    <li><a href="{{ url('config', ['department']) }}"><i class="fas fa-users"></i>&nbsp;&nbsp; Department</a>
                     </li>
                     @foreach($config->getValue('device', 'asc') as $device)
                     <li>
                         <a href="{{ url('config', [$device]) }}">
-                            <i class="fa fa-circle-o"></i> <span>{{ ucwords(str_replace_last('-', ' ', $device)) }}</span>
+                            <i class="{{ $config->getValue($device.'_icon')->first()}}"></i> &nbsp;&nbsp;<span>{{ ucwords(str_replace_last('-', ' ', $device)) }}</span>
                         </a>
                     </li>
                     @endforeach
